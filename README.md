@@ -1,0 +1,4 @@
+pineapple
+=========
+
+Semantic auto spacing.
