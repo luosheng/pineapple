@@ -9,6 +9,7 @@ is_cjk_character = (char_code) ->
 	in_range(char_code, 0x3040, 0x312f) or
 	in_range(char_code, 0x3200, 0x32ff) or
 	in_range(char_code, 0x3400, 0x4dbf) or
+	in_range(char_code, 0x4e00, 0x9fff) or
 	in_range(char_code, 0x9fff, 0xf900)
 
 insert_space = (text) ->
