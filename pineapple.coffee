@@ -21,7 +21,7 @@ insert_space = (text) ->
 	while start < text.length and end < text.length
 		c = text.charCodeAt(end)
 		current_cjk_pun_mode = is_cjk_punctuation(c)
-		current_cjk_mode = current_cjk_pun_mode and is_cjk_character(c)
+		current_cjk_mode = current_cjk_pun_mode or is_cjk_character(c)
 		if current_cjk_mode != previous_cjk_mode
 			segments.push text.substring(start, end)
 			if (current_cjk_mode and not current_cjk_pun_mode) or not (current_cjk_mode or previous_cjk_pun_mode)
