@@ -42,3 +42,5 @@ pineapple = (root) ->
 					elem.nodeValue = insert_spacing(elem.nodeValue, '\u2006')
 				break unless elem = elem.nextSibling
 		travel root
+
+window['pineapple'] = pineapple
