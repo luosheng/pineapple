@@ -32,3 +32,13 @@ insert_spacing = (text, space) ->
 		end++
 	segments.push text.substring(start)
 	segments.join('')
+
+pineapple = (root) ->
+		travel = (elem) ->
+			loop
+				if elem.hasChildNodes()
+					travel elem.firstChild
+				if elem.nodeType == 3
+					elem.nodeValue = insert_spacing(elem.nodeValue, '\u2006')
+				break unless elem = elem.nextSibling
+		travel root
