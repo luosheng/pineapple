@@ -23,9 +23,11 @@ insert_spacing = (text, space) ->
 		current_cjk_pun_mode = is_cjk_punctuation(c)
 		current_cjk_mode = current_cjk_pun_mode or is_cjk_character(c)
 		if current_cjk_mode != previous_cjk_mode
-			segments.push text.substring(start, end)
-			if (current_cjk_mode and not current_cjk_pun_mode) or not (current_cjk_mode or previous_cjk_pun_mode)
-				segments.push space
+			substring = text.substring(start, end)
+			if substring != ''
+				segments.push substring
+				if (current_cjk_mode and not current_cjk_pun_mode) or not (current_cjk_mode or previous_cjk_pun_mode)
+					segments.push space
 			start = end
 		previous_cjk_mode = current_cjk_mode
 		previous_cjk_pun_mode = current_cjk_pun_mode
